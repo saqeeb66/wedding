@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no">
 
-<title>Suhail ❤️ Saniya Wedding</title>
+<title>Suhail ❤️ Saniya</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Pinyon+Script&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,17 +18,67 @@ box-sizing:border-box;
 
 html{
 scroll-behavior:smooth;
+overflow-x:hidden;
 }
 
 body{
 overflow-x:hidden;
+background:#060006;
 font-family:'Cinzel',serif;
-background:#090009;
 color:white;
 }
 
 /* =========================
-   LOADER
+FULLSCREEN MOBILE SCENES
+========================= */
+
+.scene{
+height:100vh;
+width:100%;
+position:relative;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:25px;
+}
+
+/* =========================
+BACKGROUND EFFECTS
+========================= */
+
+.scene::before{
+content:'';
+position:absolute;
+width:250%;
+height:250%;
+
+background:
+radial-gradient(circle,
+rgba(255,255,255,0.08),
+transparent 60%);
+
+animation:rotate 35s linear infinite;
+}
+
+.scene::after{
+content:'';
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.08),
+transparent
+);
+
+animation:lightMove 8s linear infinite;
+}
+
+/* =========================
+LOADER
 ========================= */
 
 .loader{
@@ -37,87 +87,58 @@ inset:0;
 background:black;
 z-index:999999;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 flex-direction:column;
 transition:2s;
-overflow:hidden;
-}
-
-.loader::before{
-content:'';
-position:absolute;
-width:300%;
-height:300%;
-background:
-radial-gradient(circle,#ff4fa344,transparent 60%);
-animation:rotate 25s linear infinite;
 }
 
 .loader h1{
-font-size:100px;
+font-size:65px;
 font-family:'Pinyon Script',cursive;
-z-index:2;
-animation:glow 3s infinite;
+
+background:
+linear-gradient(
+90deg,
+#fff,
+#ffd700,
+#ff4fa3,
+#fff
+);
+
+background-size:300%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:
+glow 4s infinite,
+shimmer 10s linear infinite;
 }
 
 .loader p{
 margin-top:20px;
-letter-spacing:8px;
-font-size:18px;
-z-index:2;
+font-size:13px;
+letter-spacing:5px;
 }
 
 /* =========================
-   HERO
+CONTENT
 ========================= */
 
-.hero{
-height:100vh;
+.content{
 position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-overflow:hidden;
-background:
-radial-gradient(circle at top,#6b1c46,#12000f 70%);
-}
-
-.hero::before{
-content:'';
-position:absolute;
-width:250%;
-height:250%;
-background:
-radial-gradient(circle,rgba(255,255,255,0.08),transparent 60%);
-animation:rotate 40s linear infinite;
-}
-
-.hero::after{
-content:'';
-position:absolute;
-inset:0;
-background:
-linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.08),
-transparent
-);
-animation:lightMove 8s linear infinite;
-}
-
-.hero-content{
-position:relative;
-z-index:10;
+z-index:5;
 text-align:center;
+width:100%;
 animation:fadeUp 2s ease;
-padding:20px;
 }
 
 .main-title{
-font-size:130px;
+font-size:72px;
+line-height:1;
 font-family:'Pinyon Script',cursive;
+
 background:
 linear-gradient(
 90deg,
@@ -138,51 +159,132 @@ shimmer 10s linear infinite;
 }
 
 .subtitle{
-font-size:30px;
-letter-spacing:10px;
-margin-top:10px;
-opacity:0.9;
+margin-top:15px;
+font-size:12px;
+letter-spacing:4px;
+color:#ffd3e6;
 }
 
 .names{
-margin-top:50px;
+margin-top:45px;
 }
 
 .names h2{
-font-size:100px;
+font-size:65px;
 font-family:'Pinyon Script',cursive;
 animation:floating 5s infinite;
 }
 
 .with{
-font-size:40px;
-margin:15px 0;
-color:#ffc2de;
+margin:8px 0;
+font-size:22px;
+color:#ffc4dd;
 }
 
-.invite-box{
-margin-top:60px;
-padding:45px;
-border-radius:45px;
-background:rgba(255,255,255,0.08);
+.glass{
+margin-top:35px;
+
+background:
+rgba(255,255,255,0.08);
+
+border:
+1px solid rgba(255,255,255,0.15);
+
 backdrop-filter:blur(25px);
-border:1px solid rgba(255,255,255,0.15);
-box-shadow:0 0 80px rgba(255,0,128,0.2);
+
+padding:30px 20px;
+
+border-radius:35px;
+
+box-shadow:
+0 0 60px rgba(255,0,128,0.18);
+
 animation:floating 5s infinite;
 }
 
-.invite-box h3{
-font-size:55px;
+.glass h3{
+font-size:32px;
 margin-bottom:15px;
 }
 
-.invite-box p{
-font-size:28px;
+.glass p{
+font-size:18px;
 line-height:1.6;
 }
 
 /* =========================
-   PARTICLES
+EVENT CARD
+========================= */
+
+.card{
+margin-top:25px;
+
+background:
+rgba(255,255,255,0.08);
+
+border:
+1px solid rgba(255,255,255,0.15);
+
+backdrop-filter:blur(25px);
+
+padding:30px 25px;
+
+border-radius:35px;
+
+box-shadow:
+0 0 60px rgba(255,0,128,0.18);
+
+animation:
+floating 5s infinite;
+}
+
+.card h2{
+font-size:40px;
+margin-bottom:20px;
+color:#ffd7ec;
+}
+
+.card p{
+font-size:18px;
+line-height:1.7;
+margin-bottom:10px;
+}
+
+/* =========================
+COUNTDOWN
+========================= */
+
+.countdown{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-top:35px;
+}
+
+.count{
+padding:25px 10px;
+
+background:
+rgba(255,255,255,0.08);
+
+border-radius:30px;
+
+backdrop-filter:blur(25px);
+
+animation:floating 4s infinite;
+}
+
+.count h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.count p{
+font-size:16px;
+}
+
+/* =========================
+PARTICLES
 ========================= */
 
 .particle{
@@ -194,232 +296,7 @@ z-index:1;
 }
 
 /* =========================
-   SECTION
-========================= */
-
-.section{
-padding:150px 10%;
-position:relative;
-overflow:hidden;
-}
-
-.section-title{
-font-size:90px;
-text-align:center;
-margin-bottom:90px;
-font-family:'Pinyon Script',cursive;
-
-background:
-linear-gradient(
-90deg,
-#fff,
-#ffd700,
-#ff4fa3,
-#fff
-);
-
-background-size:300%;
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-animation:
-shimmer 10s linear infinite,
-glow 5s infinite;
-}
-
-/* =========================
-   TIMELINE
-========================= */
-
-.timeline{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(350px,1fr));
-gap:50px;
-}
-
-.timeline-card{
-padding:60px;
-border-radius:45px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(25px);
-border:1px solid rgba(255,255,255,0.15);
-transition:1.2s;
-box-shadow:0 0 60px rgba(255,0,128,0.15);
-position:relative;
-overflow:hidden;
-}
-
-.timeline-card::before{
-content:'';
-position:absolute;
-inset:0;
-background:
-linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,0.08),
-transparent
-);
-
-animation:lightMove 8s linear infinite;
-}
-
-.timeline-card:hover{
-transform:
-translateY(-15px)
-scale(1.03);
-}
-
-.timeline-card h2{
-font-size:55px;
-margin-bottom:30px;
-color:#ffd8f0;
-position:relative;
-z-index:2;
-}
-
-.timeline-card p{
-font-size:28px;
-margin-bottom:20px;
-line-height:1.5;
-position:relative;
-z-index:2;
-}
-
-/* =========================
-   COUNTDOWN
-========================= */
-
-.countdown{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(180px,1fr));
-gap:30px;
-margin-top:80px;
-}
-
-.count-card{
-padding:50px 20px;
-text-align:center;
-border-radius:35px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
-animation:floating 4s infinite;
-box-shadow:0 0 60px rgba(255,0,128,0.15);
-}
-
-.count-number{
-font-size:75px;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-.count-label{
-font-size:28px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-padding:160px 20px;
-text-align:center;
-background:
-linear-gradient(
-to top,
-#000,
-#300018
-);
-position:relative;
-overflow:hidden;
-}
-
-.footer::before{
-content:'';
-position:absolute;
-inset:0;
-
-background:
-radial-gradient(circle,
-rgba(255,255,255,0.08),
-transparent 70%);
-
-animation:rotate 30s linear infinite;
-}
-
-.footer h1{
-font-size:120px;
-font-family:'Pinyon Script',cursive;
-
-background:
-linear-gradient(
-90deg,
-#fff,
-#ffd700,
-#ff4fa3,
-#fff
-);
-
-background-size:300%;
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-animation:
-shimmer 10s linear infinite,
-glow 5s infinite;
-
-position:relative;
-z-index:2;
-}
-
-.footer p{
-margin-top:25px;
-font-size:30px;
-position:relative;
-z-index:2;
-}
-
-/* =========================
-   MUSIC
-========================= */
-
-.music{
-position:fixed;
-bottom:20px;
-right:20px;
-z-index:99999;
-
-background:
-linear-gradient(
-45deg,
-#ff4fa3,
-#ff006a
-);
-
-border:none;
-padding:18px 30px;
-border-radius:50px;
-font-size:18px;
-color:white;
-cursor:pointer;
-
-box-shadow:
-0 0 20px #ff4fa3,
-0 0 50px #ff4fa3;
-
-transition:0.5s;
-}
-
-.music:hover{
-transform:scale(1.08);
-}
-
-/* =========================
-   ANIMATIONS
+ANIMATIONS
 ========================= */
 
 @keyframes glow{
@@ -430,8 +307,8 @@ text-shadow:0 0 10px #ff4fa3;
 
 50%{
 text-shadow:
-0 0 30px #ff4fa3,
-0 0 60px #ff4fa3;
+0 0 40px #ff4fa3,
+0 0 80px #ff4fa3;
 }
 
 100%{
@@ -440,20 +317,14 @@ text-shadow:0 0 10px #ff4fa3;
 
 }
 
-@keyframes fadeUp{
+@keyframes shimmer{
 
-from{
-opacity:0;
-transform:
-translateY(100px)
-scale(0.8);
+0%{
+background-position:-300%;
 }
 
-to{
-opacity:1;
-transform:
-translateY(0)
-scale(1);
+100%{
+background-position:300%;
 }
 
 }
@@ -465,7 +336,7 @@ transform:translateY(0);
 }
 
 50%{
-transform:translateY(-15px);
+transform:translateY(-12px);
 }
 
 100%{
@@ -486,18 +357,6 @@ transform:rotate(360deg);
 
 }
 
-@keyframes shimmer{
-
-0%{
-background-position:-300%;
-}
-
-100%{
-background-position:300%;
-}
-
-}
-
 @keyframes lightMove{
 
 0%{
@@ -510,6 +369,24 @@ transform:translateX(100%);
 
 }
 
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:
+translateY(80px)
+scale(0.8);
+}
+
+to{
+opacity:1;
+transform:
+translateY(0)
+scale(1);
+}
+
+}
+
 @keyframes floatParticle{
 
 0%{
@@ -517,6 +394,7 @@ transform:
 translateY(120vh)
 translateX(0)
 rotate(0deg);
+
 opacity:0;
 }
 
@@ -525,52 +403,35 @@ transform:
 translateY(-120vh)
 translateX(200px)
 rotate(720deg);
+
 opacity:1;
 }
 
 }
 
 /* =========================
-   MOBILE
+DESKTOP BLOCK
 ========================= */
 
-@media(max-width:768px){
+@media(min-width:769px){
 
-.main-title{
-font-size:75px;
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:black;
 }
 
-.names h2{
-font-size:60px;
-}
-
-.section-title{
-font-size:60px;
-}
-
-.timeline-card h2{
+body::before{
+content:'Open this wedding invite on mobile 📱';
 font-size:40px;
+color:white;
 }
 
-.timeline-card p{
-font-size:22px;
-}
-
-.footer h1{
-font-size:75px;
-}
-
-.subtitle{
-font-size:18px;
-letter-spacing:5px;
-}
-
-.invite-box h3{
-font-size:38px;
-}
-
-.invite-box p{
-font-size:22px;
+.scene,
+.loader{
+display:none;
 }
 
 }
@@ -590,27 +451,17 @@ font-size:22px;
 
 </div>
 
-<!-- MUSIC BUTTON -->
-
-<button class="music" onclick="playMusic()">
-
-🎵 Music
-
-</button>
-
 <!-- AUDIO -->
 
-<audio id="music" autoplay loop>
-
+<audio id="music" autoplay loop playsinline muted>
 <source src="wedding.mp3" type="audio/mp3">
-
 </audio>
 
-<!-- HERO -->
+<!-- SCENE 1 -->
 
-<section class="hero">
+<section class="scene">
 
-<div class="hero-content">
+<div class="content">
 
 <h1 class="main-title">
 
@@ -634,7 +485,7 @@ TOGETHER WITH THEIR FAMILIES
 
 </div>
 
-<div class="invite-box">
+<div class="glass">
 
 <h3>Family Invites You</h3>
 
@@ -651,19 +502,13 @@ on this beautiful occasion
 
 </section>
 
-<!-- EVENTS -->
+<!-- SCENE 2 -->
 
-<section class="section">
+<section class="scene">
 
-<h1 class="section-title">
+<div class="content">
 
-Wedding Events
-
-</h1>
-
-<div class="timeline">
-
-<div class="timeline-card">
+<div class="card">
 
 <h2>Nikah Ceremony</h2>
 
@@ -677,7 +522,17 @@ Wedding Events
 
 </div>
 
-<div class="timeline-card">
+</div>
+
+</section>
+
+<!-- SCENE 3 -->
+
+<section class="scene">
+
+<div class="content">
+
+<div class="card">
 
 <h2>Valima Ceremony</h2>
 
@@ -695,47 +550,51 @@ Wedding Events
 
 </section>
 
-<!-- COUNTDOWN -->
+<!-- SCENE 4 -->
 
-<section class="section">
+<section class="scene">
 
-<h1 class="section-title">
+<div class="content">
 
-Countdown To Wedding
+<h1 class="main-title">
+
+Countdown
 
 </h1>
 
 <div class="countdown">
 
-<div class="count-card">
+<div class="count">
 
-<div class="count-number" id="days">00</div>
+<h1 id="days">00</h1>
 
-<div class="count-label">Days</div>
-
-</div>
-
-<div class="count-card">
-
-<div class="count-number" id="hours">00</div>
-
-<div class="count-label">Hours</div>
+<p>Days</p>
 
 </div>
 
-<div class="count-card">
+<div class="count">
 
-<div class="count-number" id="minutes">00</div>
+<h1 id="hours">00</h1>
 
-<div class="count-label">Minutes</div>
+<p>Hours</p>
 
 </div>
 
-<div class="count-card">
+<div class="count">
 
-<div class="count-number" id="seconds">00</div>
+<h1 id="minutes">00</h1>
 
-<div class="count-label">Seconds</div>
+<p>Minutes</p>
+
+</div>
+
+<div class="count">
+
+<h1 id="seconds">00</h1>
+
+<p>Seconds</p>
+
+</div>
 
 </div>
 
@@ -743,24 +602,37 @@ Countdown To Wedding
 
 </section>
 
-<!-- FOOTER -->
+<!-- SCENE 5 -->
 
-<footer class="footer">
+<section class="scene">
 
-<h1>Suhail ❤️ Saniya</h1>
+<div class="content">
+
+<h1 class="main-title">
+
+Thank You
+
+</h1>
+
+<div class="glass">
 
 <p>
 
-Thank You For Being Part Of Our Special Day
+We await your gracious presence
+to bless the couple.
 
 </p>
 
-</footer>
+</div>
+
+</div>
+
+</section>
 
 <script>
 
 /* =========================
-   LOADER
+LOADER
 ========================= */
 
 window.addEventListener('load',()=>{
@@ -770,22 +642,24 @@ const loader=document.getElementById('loader');
 setTimeout(()=>{
 
 loader.style.opacity='0';
+
 loader.style.transform='scale(1.2)';
+
 loader.style.filter='blur(20px)';
 
 setTimeout(()=>{
 loader.style.display='none';
 },1800);
 
-},3000);
+},2500);
 
 });
 
 /* =========================
-   PARTICLES
+PARTICLES
 ========================= */
 
-for(let i=0;i<180;i++){
+for(let i=0;i<220;i++){
 
 const particle=document.createElement('div');
 
@@ -821,69 +695,12 @@ document.body.appendChild(particle);
 }
 
 /* =========================
-   SCROLL ANIMATIONS
-========================= */
-
-const cards=document.querySelectorAll(
-'.timeline-card,.count-card,.invite-box'
-);
-
-const observer=new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity='1';
-
-entry.target.style.transform=
-'translateY(0) scale(1)';
-
-}
-
-});
-
-},{
-threshold:0.2
-});
-
-cards.forEach(card=>{
-
-card.style.opacity='0';
-
-card.style.transform=
-'translateY(120px) scale(0.8)';
-
-card.style.transition=
-'2s cubic-bezier(.17,.67,.2,1.01)';
-
-observer.observe(card);
-
-});
-
-/* =========================
-   PARALLAX
-========================= */
-
-window.addEventListener('mousemove',e=>{
-
-const x=e.clientX/window.innerWidth;
-const y=e.clientY/window.innerHeight;
-
-document.querySelector('.hero').style.backgroundPosition=
-`${x*50}px ${y*50}px`;
-
-});
-
-/* =========================
-   AUDIO
+AUDIO AUTOPLAY
 ========================= */
 
 const music=document.getElementById('music');
 
-music.volume=0.55;
-
-/* TRY AUTOPLAY */
+music.volume=0.6;
 
 window.addEventListener('load',()=>{
 
@@ -891,16 +708,16 @@ const playPromise=music.play();
 
 if(playPromise!==undefined){
 
-playPromise.catch(()=>{
+playPromise.then(()=>{
+
+music.muted=false;
+
+}).catch(()=>{
 
 const unlock=()=>{
 
+music.muted=false;
 music.play();
-
-document.removeEventListener(
-'mousemove',
-unlock
-);
 
 document.removeEventListener(
 'touchstart',
@@ -908,25 +725,22 @@ unlock
 );
 
 document.removeEventListener(
-'click',
+'mousemove',
 unlock
 );
 
 };
 
 document.addEventListener(
-'mousemove',
-unlock
-);
-
-document.addEventListener(
 'touchstart',
-unlock
+unlock,
+{once:true}
 );
 
 document.addEventListener(
-'click',
-unlock
+'mousemove',
+unlock,
+{once:true}
 );
 
 });
@@ -934,15 +748,9 @@ unlock
 }
 
 });
-
-function playMusic(){
-
-music.play();
-
-}
 
 /* =========================
-   COUNTDOWN
+COUNTDOWN
 ========================= */
 
 const weddingDate=
@@ -957,7 +765,9 @@ const now=new Date().getTime();
 const distance=weddingDate-now;
 
 document.getElementById('days').innerHTML=
-Math.floor(distance/(1000*60*60*24));
+Math.floor(
+distance/(1000*60*60*24)
+);
 
 document.getElementById('hours').innerHTML=
 Math.floor(
@@ -983,21 +793,51 @@ Math.floor(
 },1000);
 
 /* =========================
-   CINEMATIC ZOOM
+AUTO SCROLL CINEMATIC
+========================= */
+
+let currentScene=0;
+
+const scenes=document.querySelectorAll('.scene');
+
+setInterval(()=>{
+
+currentScene++;
+
+if(currentScene>=scenes.length){
+
+currentScene=0;
+
+}
+
+scenes[currentScene].scrollIntoView({
+behavior:'smooth'
+});
+
+},7000);
+
+/* =========================
+CINEMATIC ZOOM
 ========================= */
 
 let zoom=1;
 
 setInterval(()=>{
 
-zoom+=0.0007;
+zoom+=0.0006;
 
-document.querySelector('.hero-content')
-.style.transform=
+document.querySelectorAll('.content')
+.forEach(el=>{
+
+el.style.transform=
 `scale(${zoom})`;
 
-if(zoom>1.08){
+});
+
+if(zoom>1.06){
+
 zoom=1;
+
 }
 
 },30);
