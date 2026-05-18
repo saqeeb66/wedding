@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no">
 
-<title>Suhail ❤️ Saniya</title>
+<meta
+name="viewport"
+content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no"
+/>
+
+<title>Suhail ❤️ Saniya Wedding</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Pinyon+Script&display=swap" rel="stylesheet">
 
@@ -23,23 +27,112 @@ overflow-x:hidden;
 
 body{
 overflow-x:hidden;
-background:#060006;
+background:#050005;
 font-family:'Cinzel',serif;
 color:white;
 }
 
 /* =========================
-FULLSCREEN MOBILE SCENES
+MOBILE ONLY
+========================= */
+
+@media(min-width:769px){
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:black;
+}
+
+body::before{
+content:'Open this wedding invitation on mobile 📱';
+font-size:40px;
+color:white;
+}
+
+.scene,
+.loader{
+display:none;
+}
+
+}
+
+/* =========================
+LOADER
+========================= */
+
+.loader{
+position:fixed;
+inset:0;
+background:black;
+z-index:999999;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+overflow:hidden;
+transition:2s;
+}
+
+.loader::before{
+content:'';
+position:absolute;
+width:300%;
+height:300%;
+
+background:
+radial-gradient(circle,
+rgba(255,0,128,0.25),
+transparent 60%);
+
+animation:rotate 25s linear infinite;
+}
+
+.loader h1{
+font-size:70px;
+font-family:'Pinyon Script',cursive;
+z-index:2;
+
+background:
+linear-gradient(
+90deg,
+#fff,
+#ffd700,
+#ff4fa3,
+#fff
+);
+
+background-size:300%;
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:
+glow 5s infinite,
+shimmer 10s linear infinite;
+}
+
+.loader p{
+margin-top:20px;
+font-size:12px;
+letter-spacing:5px;
+z-index:2;
+}
+
+/* =========================
+SCENES
 ========================= */
 
 .scene{
 height:100vh;
 width:100%;
 position:relative;
-overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
+overflow:hidden;
 padding:25px;
 }
 
@@ -78,64 +171,23 @@ animation:lightMove 8s linear infinite;
 }
 
 /* =========================
-LOADER
-========================= */
-
-.loader{
-position:fixed;
-inset:0;
-background:black;
-z-index:999999;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-transition:2s;
-}
-
-.loader h1{
-font-size:65px;
-font-family:'Pinyon Script',cursive;
-
-background:
-linear-gradient(
-90deg,
-#fff,
-#ffd700,
-#ff4fa3,
-#fff
-);
-
-background-size:300%;
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-animation:
-glow 4s infinite,
-shimmer 10s linear infinite;
-}
-
-.loader p{
-margin-top:20px;
-font-size:13px;
-letter-spacing:5px;
-}
-
-/* =========================
 CONTENT
 ========================= */
 
 .content{
 position:relative;
 z-index:5;
-text-align:center;
 width:100%;
+text-align:center;
 animation:fadeUp 2s ease;
 }
 
+/* =========================
+HEADINGS
+========================= */
+
 .main-title{
-font-size:72px;
+font-size:75px;
 line-height:1;
 font-family:'Pinyon Script',cursive;
 
@@ -154,32 +206,40 @@ background-size:300%;
 -webkit-text-fill-color:transparent;
 
 animation:
-glow 5s infinite,
-shimmer 10s linear infinite;
+shimmer 10s linear infinite,
+glow 5s infinite;
 }
 
 .subtitle{
 margin-top:15px;
 font-size:12px;
 letter-spacing:4px;
-color:#ffd3e6;
+color:#ffd6ea;
 }
 
+/* =========================
+NAMES
+========================= */
+
 .names{
-margin-top:45px;
+margin-top:50px;
 }
 
 .names h2{
-font-size:65px;
+font-size:68px;
 font-family:'Pinyon Script',cursive;
 animation:floating 5s infinite;
 }
 
 .with{
-margin:8px 0;
 font-size:22px;
-color:#ffc4dd;
+margin:8px 0;
+color:#ffc7df;
 }
+
+/* =========================
+GLASS CARD
+========================= */
 
 .glass{
 margin-top:35px;
@@ -199,21 +259,22 @@ border-radius:35px;
 box-shadow:
 0 0 60px rgba(255,0,128,0.18);
 
-animation:floating 5s infinite;
+animation:
+floating 5s infinite;
 }
 
 .glass h3{
-font-size:32px;
+font-size:34px;
 margin-bottom:15px;
 }
 
 .glass p{
 font-size:18px;
-line-height:1.6;
+line-height:1.7;
 }
 
 /* =========================
-EVENT CARD
+EVENT CARDS
 ========================= */
 
 .card{
@@ -239,14 +300,14 @@ floating 5s infinite;
 }
 
 .card h2{
-font-size:40px;
+font-size:42px;
 margin-bottom:20px;
-color:#ffd7ec;
+color:#ffd9ef;
 }
 
 .card p{
 font-size:18px;
-line-height:1.7;
+line-height:1.8;
 margin-bottom:10px;
 }
 
@@ -271,6 +332,9 @@ border-radius:30px;
 
 backdrop-filter:blur(25px);
 
+box-shadow:
+0 0 40px rgba(255,0,128,0.12);
+
 animation:floating 4s infinite;
 }
 
@@ -280,7 +344,7 @@ margin-bottom:10px;
 }
 
 .count p{
-font-size:16px;
+font-size:15px;
 }
 
 /* =========================
@@ -329,6 +393,18 @@ background-position:300%;
 
 }
 
+@keyframes rotate{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
 @keyframes floating{
 
 0%{
@@ -341,18 +417,6 @@ transform:translateY(-12px);
 
 100%{
 transform:translateY(0);
-}
-
-}
-
-@keyframes rotate{
-
-from{
-transform:rotate(0deg);
-}
-
-to{
-transform:rotate(360deg);
 }
 
 }
@@ -373,16 +437,20 @@ transform:translateX(100%);
 
 from{
 opacity:0;
+
 transform:
 translateY(80px)
 scale(0.8);
+
 }
 
 to{
 opacity:1;
+
 transform:
 translateY(0)
 scale(1);
+
 }
 
 }
@@ -390,50 +458,38 @@ scale(1);
 @keyframes floatParticle{
 
 0%{
+
 transform:
 translateY(120vh)
 translateX(0)
 rotate(0deg);
 
 opacity:0;
+
 }
 
 100%{
+
 transform:
 translateY(-120vh)
 translateX(200px)
 rotate(720deg);
 
 opacity:1;
+
 }
 
 }
 
 /* =========================
-DESKTOP BLOCK
+FOOTER
 ========================= */
 
-@media(min-width:769px){
-
-body{
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-background:black;
-}
-
-body::before{
-content:'Open this wedding invite on mobile 📱';
-font-size:40px;
-color:white;
-}
-
-.scene,
-.loader{
-display:none;
-}
-
+.footer-text{
+margin-top:40px;
+font-size:18px;
+line-height:1.8;
+color:#ffd6ea;
 }
 
 </style>
@@ -441,7 +497,9 @@ display:none;
 
 <body>
 
-<!-- LOADER -->
+<!-- ======================
+LOADER
+====================== -->
 
 <div class="loader" id="loader">
 
@@ -451,13 +509,27 @@ display:none;
 
 </div>
 
-<!-- AUDIO -->
+<!-- ======================
+AUDIO
+====================== -->
 
-<audio id="music" autoplay loop playsinline muted>
+<audio
+id="music"
+loop
+autoplay
+muted
+playsinline
+webkit-playsinline
+preload="auto"
+>
+
 <source src="wedding.mp3" type="audio/mp3">
+
 </audio>
 
-<!-- SCENE 1 -->
+<!-- ======================
+SCENE 1
+====================== -->
 
 <section class="scene">
 
@@ -502,7 +574,9 @@ on this beautiful occasion
 
 </section>
 
-<!-- SCENE 2 -->
+<!-- ======================
+SCENE 2
+====================== -->
 
 <section class="scene">
 
@@ -526,7 +600,9 @@ on this beautiful occasion
 
 </section>
 
-<!-- SCENE 3 -->
+<!-- ======================
+SCENE 3
+====================== -->
 
 <section class="scene">
 
@@ -550,7 +626,9 @@ on this beautiful occasion
 
 </section>
 
-<!-- SCENE 4 -->
+<!-- ======================
+SCENE 4
+====================== -->
 
 <section class="scene">
 
@@ -602,7 +680,9 @@ Countdown
 
 </section>
 
-<!-- SCENE 5 -->
+<!-- ======================
+SCENE 5
+====================== -->
 
 <section class="scene">
 
@@ -619,9 +699,16 @@ Thank You
 <p>
 
 We await your gracious presence
-to bless the couple.
+to bless the couple and make our
+celebration memorable.
 
 </p>
+
+</div>
+
+<div class="footer-text">
+
+Suhail ❤️ Saniya
 
 </div>
 
@@ -631,13 +718,14 @@ to bless the couple.
 
 <script>
 
-/* =========================
+/* ======================
 LOADER
-========================= */
+====================== */
 
 window.addEventListener('load',()=>{
 
-const loader=document.getElementById('loader');
+const loader=
+document.getElementById('loader');
 
 setTimeout(()=>{
 
@@ -648,31 +736,37 @@ loader.style.transform='scale(1.2)';
 loader.style.filter='blur(20px)';
 
 setTimeout(()=>{
+
 loader.style.display='none';
+
 },1800);
 
 },2500);
 
 });
 
-/* =========================
+/* ======================
 PARTICLES
-========================= */
+====================== */
 
-for(let i=0;i<220;i++){
+for(let i=0;i<250;i++){
 
-const particle=document.createElement('div');
+const particle=
+document.createElement('div');
 
 particle.classList.add('particle');
 
-const size=Math.random()*8+2;
+const size=
+Math.random()*8+2;
 
 particle.style.width=size+'px';
 particle.style.height=size+'px';
 
-particle.style.left=Math.random()*100+'vw';
+particle.style.left=
+Math.random()*100+'vw';
 
-particle.style.top=Math.random()*100+'vh';
+particle.style.top=
+Math.random()*100+'vh';
 
 particle.style.background=
 Math.random()>0.5
@@ -688,70 +782,80 @@ Math.random()*15+10+'s';
 particle.style.animationDelay=
 Math.random()*5+'s';
 
-particle.style.opacity=Math.random();
+particle.style.opacity=
+Math.random();
 
 document.body.appendChild(particle);
 
 }
 
-/* =========================
+/* ======================
 AUDIO AUTOPLAY
-========================= */
+====================== */
 
-const music=document.getElementById('music');
+const music =
+document.getElementById("music");
 
-music.volume=0.6;
+music.volume = 0.7;
 
-window.addEventListener('load',()=>{
+async function forcePlay() {
 
-const playPromise=music.play();
+try {
 
-if(playPromise!==undefined){
+music.muted = true;
 
-playPromise.then(()=>{
+await music.play();
 
-music.muted=false;
+setTimeout(() => {
 
-}).catch(()=>{
+music.muted = false;
 
-const unlock=()=>{
+music.volume = 0.7;
 
-music.muted=false;
-music.play();
+}, 1000);
 
-document.removeEventListener(
-'touchstart',
-unlock
-);
+} catch (e) {
 
-document.removeEventListener(
-'mousemove',
-unlock
-);
-
-};
-
-document.addEventListener(
-'touchstart',
-unlock,
-{once:true}
-);
-
-document.addEventListener(
-'mousemove',
-unlock,
-{once:true}
-);
-
-});
+console.log(e);
 
 }
 
-});
+}
 
-/* =========================
+/* TRY IMMEDIATELY */
+
+window.addEventListener(
+"load",
+forcePlay
+);
+
+/* TOUCH */
+
+document.addEventListener(
+"touchstart",
+forcePlay,
+{ once: true }
+);
+
+/* MOVE */
+
+document.addEventListener(
+"mousemove",
+forcePlay,
+{ once: true }
+);
+
+/* CLICK */
+
+document.addEventListener(
+"click",
+forcePlay,
+{ once: true }
+);
+
+/* ======================
 COUNTDOWN
-========================= */
+====================== */
 
 const weddingDate=
 new Date(
@@ -760,9 +864,11 @@ new Date(
 
 setInterval(()=>{
 
-const now=new Date().getTime();
+const now=
+new Date().getTime();
 
-const distance=weddingDate-now;
+const distance=
+weddingDate-now;
 
 document.getElementById('days').innerHTML=
 Math.floor(
@@ -792,13 +898,14 @@ Math.floor(
 
 },1000);
 
-/* =========================
-AUTO SCROLL CINEMATIC
-========================= */
+/* ======================
+AUTO SCROLL
+====================== */
 
 let currentScene=0;
 
-const scenes=document.querySelectorAll('.scene');
+const scenes=
+document.querySelectorAll('.scene');
 
 setInterval(()=>{
 
@@ -810,15 +917,18 @@ currentScene=0;
 
 }
 
-scenes[currentScene].scrollIntoView({
+scenes[currentScene]
+.scrollIntoView({
+
 behavior:'smooth'
+
 });
 
 },7000);
 
-/* =========================
+/* ======================
 CINEMATIC ZOOM
-========================= */
+====================== */
 
 let zoom=1;
 
@@ -826,7 +936,8 @@ setInterval(()=>{
 
 zoom+=0.0006;
 
-document.querySelectorAll('.content')
+document
+.querySelectorAll('.content')
 .forEach(el=>{
 
 el.style.transform=
